@@ -1,0 +1,9 @@
+# Personal files - don't publish
+CV.pdf
+brief intro.txt
+.claude/
+
+# Source image folders (originals) - only publish assets/
+/DIJ/
+/Keyboard/
+/PTCG/

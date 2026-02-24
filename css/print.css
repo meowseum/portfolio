@@ -1,0 +1,415 @@
+/* ============================================
+   Portfolio — Print / PDF Stylesheet
+   ============================================ */
+
+@page {
+  size: A4 portrait;
+  margin: 1.5cm 2cm;
+}
+
+/* --- Reset for print --- */
+*,
+*::before,
+*::after {
+  background: transparent !important;
+  color: #000 !important;
+  box-shadow: none !important;
+  text-shadow: none !important;
+}
+
+body {
+  font-size: 10pt;
+  line-height: 1.5;
+  color: #000 !important;
+}
+
+/* --- Print-only header --- */
+body::before {
+  content: "Chan Chak Yin (Jeff)  |  jeffpccy@gmail.com  |  +852 9677 8884";
+  display: block;
+  text-align: center;
+  font-size: 9pt;
+  color: #555 !important;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 0.5cm;
+  margin-bottom: 0.5cm;
+}
+
+/* --- Hide interactive elements --- */
+#nav,
+.nav-toggle,
+.lightbox,
+.hero-cta,
+.btn,
+.gallery-placeholder,
+.video-embed {
+  display: none !important;
+}
+
+/* --- Ensure animated content is visible --- */
+.animate-on-scroll {
+  opacity: 1 !important;
+  transform: none !important;
+  transition: none !important;
+}
+
+/* --- Section backgrounds: remove all --- */
+section,
+header,
+footer,
+#hero,
+#contact,
+.section-dark,
+.section-light {
+  background: white !important;
+  color: #000 !important;
+  padding: 0.5rem 0 !important;
+}
+
+/* --- Container: full width for print --- */
+.container {
+  width: 100% !important;
+  max-width: 100% !important;
+  padding: 0.5rem 0 !important;
+}
+
+/* --- Hero: simplified header --- */
+#hero {
+  min-height: auto !important;
+  padding: 0 !important;
+  text-align: left !important;
+  display: block !important;
+}
+
+#hero::before,
+#hero::after {
+  display: none !important;
+}
+
+.hero-tagline {
+  color: #555 !important;
+  font-size: 10pt;
+}
+
+#hero h1 {
+  font-size: 20pt !important;
+  margin-bottom: 0.3cm;
+}
+
+.hero-nick {
+  color: #555 !important;
+}
+
+.hero-statement {
+  color: #333 !important;
+  font-size: 10pt;
+  max-width: 100%;
+}
+
+/* --- Typography --- */
+h1 { font-size: 20pt; }
+h2 { font-size: 14pt; margin-bottom: 0.5cm !important; }
+h3 { font-size: 11pt; }
+h4 { font-size: 10pt; }
+
+.section-title::after {
+  background: #000 !important;
+  height: 2px !important;
+}
+
+/* --- About: single column --- */
+.about-grid {
+  display: block !important;
+}
+
+.about-text p {
+  color: #333 !important;
+  margin-bottom: 0.3cm;
+}
+
+.about-highlights {
+  display: flex !important;
+  flex-wrap: wrap;
+  gap: 0.3cm;
+  margin-top: 0.5cm;
+}
+
+.stat-card {
+  border: 1px solid #ccc !important;
+  padding: 0.3cm !important;
+  text-align: center;
+  flex: 1;
+  min-width: 3cm;
+  border-radius: 4px !important;
+}
+
+.stat-number {
+  font-size: 14pt;
+  color: #000 !important;
+}
+
+.stat-label {
+  font-size: 7pt;
+  color: #555 !important;
+}
+
+/* --- Timeline: simplified --- */
+.timeline {
+  padding-left: 0 !important;
+}
+
+.timeline::before {
+  display: none !important;
+}
+
+.timeline-marker {
+  display: none !important;
+}
+
+.timeline-content {
+  padding: 0.3cm 0 !important;
+  border-left: 3px solid #000 !important;
+  padding-left: 0.5cm !important;
+  margin-bottom: 0.5cm;
+  border-radius: 0 !important;
+}
+
+.timeline-featured .timeline-content {
+  border-left-color: #000 !important;
+}
+
+.timeline-date {
+  color: #555 !important;
+}
+
+.timeline-content h3 {
+  color: #000 !important;
+}
+
+.timeline-content h4 {
+  color: #555 !important;
+}
+
+.timeline-content p,
+.timeline-achievements li {
+  color: #333 !important;
+}
+
+/* --- Education: inline --- */
+.edu-cards {
+  display: flex !important;
+  gap: 0.5cm;
+}
+
+.edu-card {
+  flex: 1;
+  border: 1px solid #ccc !important;
+  padding: 0.4cm !important;
+  border-radius: 4px !important;
+}
+
+.edu-card h3 {
+  color: #000 !important;
+  font-size: 10pt;
+}
+
+.edu-school {
+  color: #333 !important;
+}
+
+.edu-date {
+  color: #555 !important;
+}
+
+.cert-badge {
+  border: 1px solid #999 !important;
+  color: #333 !important;
+  font-size: 8pt;
+  padding: 0.1cm 0.3cm !important;
+}
+
+/* --- Portfolio: constrain images --- */
+.project {
+  page-break-inside: avoid;
+  break-inside: avoid;
+  margin-bottom: 1cm !important;
+}
+
+.project-number {
+  color: #ccc !important;
+  font-size: 24pt !important;
+}
+
+.project-header h3 {
+  color: #000 !important;
+}
+
+.project-subtitle {
+  color: #555 !important;
+}
+
+.project-description p {
+  color: #333 !important;
+}
+
+.project-tags li {
+  background: transparent !important;
+  color: #000 !important;
+  border: 1px solid #999 !important;
+  font-size: 7pt;
+  padding: 0.05cm 0.2cm !important;
+}
+
+.project-gallery {
+  display: flex !important;
+  flex-wrap: wrap;
+  gap: 0.3cm;
+}
+
+.gallery-item {
+  max-width: 48%;
+}
+
+.gallery-item img,
+.project-gallery img {
+  max-height: 5cm;
+  object-fit: contain;
+  border: 1px solid #ddd;
+  border-radius: 2px !important;
+}
+
+.project-gallery--app .gallery-item {
+  max-width: 100%;
+}
+
+.project-gallery--app img {
+  max-height: 4cm;
+}
+
+/* --- Campaign results --- */
+.campaign-results {
+  display: flex !important;
+  gap: 0.3cm;
+}
+
+.result-card {
+  flex: 1;
+  border: 1px solid #ccc !important;
+  padding: 0.3cm !important;
+  text-align: center;
+  border-radius: 4px !important;
+}
+
+.result-number {
+  font-size: 14pt;
+  color: #000 !important;
+}
+
+.result-label {
+  color: #333 !important;
+  font-size: 8pt;
+}
+
+.result-detail {
+  color: #555 !important;
+  font-size: 7pt;
+}
+
+/* --- Skills: compact grid --- */
+.skills-grid {
+  display: grid !important;
+  grid-template-columns: repeat(4, 1fr) !important;
+  gap: 0.4cm;
+}
+
+.skill-category {
+  border: 1px solid #ccc !important;
+  padding: 0.3cm !important;
+  border-radius: 4px !important;
+}
+
+.skill-category h3 {
+  color: #000 !important;
+  font-size: 9pt;
+  margin-bottom: 0.2cm !important;
+}
+
+.skill-category li {
+  color: #333 !important;
+  font-size: 8pt;
+  padding: 0.1cm 0 !important;
+  border-bottom-color: #eee !important;
+}
+
+/* --- Contact: simplified footer --- */
+#contact {
+  border-top: 2px solid #000 !important;
+  margin-top: 0.5cm;
+  padding-top: 0.3cm !important;
+  text-align: left !important;
+}
+
+#contact .section-title {
+  display: none !important;
+}
+
+.contact-text {
+  color: #333 !important;
+  font-size: 9pt;
+}
+
+.contact-links {
+  justify-content: flex-start !important;
+  gap: 1cm !important;
+}
+
+.contact-item {
+  border: none !important;
+  padding: 0 !important;
+  font-size: 9pt;
+}
+
+.contact-item svg {
+  display: none !important;
+}
+
+/* --- Page break control --- */
+h2, h3 {
+  page-break-after: avoid;
+  break-after: avoid;
+}
+
+img {
+  page-break-inside: avoid;
+  break-inside: avoid;
+}
+
+/* --- Links: show URLs for external links --- */
+a[href^="http"]::after {
+  content: " (" attr(href) ")";
+  font-size: 7pt;
+  color: #555 !important;
+  word-break: break-all;
+}
+
+a[href^="#"]::after,
+a[href^="mailto:"]::after,
+a[href^="tel:"]::after {
+  content: none;
+}
+
+/* --- Force print colors where needed --- */
+.stat-card,
+.result-card,
+.edu-card,
+.skill-category {
+  -webkit-print-color-adjust: exact;
+  color-adjust: exact;
+  print-color-adjust: exact;
+}
+
+.project-subsection {
+  border-top: 1px solid #ddd !important;
+  margin-top: 0.5cm !important;
+  padding-top: 0.3cm !important;
+}
